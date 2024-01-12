@@ -27,7 +27,6 @@ foreach ($sql as $row) {
     echo '<a href=detail.php?id=', $id, '">', $row['name'], '</a>';
     echo '</td>';
     echo '</tr>';
-    echo $sql['koku_name'],'：', $row['sensyu_name'],
     "<input type='button' onClick= 'document.location.href='favorite-delete.php''value=削除'/><br>";
 }
 echo '</table>';
