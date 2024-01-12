@@ -2,17 +2,16 @@
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
 <?php
-if (isset($_SESSION['customer'])){
-    $pdo=new PDO('mysql:host=mysql214.phy.lolipop.lan;dbname=LAA1516969-shop;charset=utf8',
-    'LAA1516969', 'Pass1112');
+    $pdo=new PDO('mysql:host=mysql218.phy.lolipop.lan;dbname=LAA1516969-aso2201217;charset=utf8',
+    'LAA1516969', 'Narimo1930');
     $sql=$pdo->prepare(
-        'delete from favorite where customer_id=? and product_id=?');
-        $sql->execute([$_SESSION['customer']['id'],$_GET['id']]);
-        echo 'お気に入りから商品を削除しました。';
+        'delete from Syoutyuu where id=?');
+        $sql->execute([,$_GET['id']]);
+        echo '商品を削除しました。';
         echo '<hr>';
     }else{
         echo 'お気に入りから商品を削除するには、ログインしてください。';
     }
-    require 'favorite.php';
+    require 'procuct.php';
     ?>
-    <?php require 'footer.php'; ?>
+    <?php require 'procuct.php'; ?>
