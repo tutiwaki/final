@@ -25,7 +25,7 @@ foreach ($sql as $row) {
     echo '<td>', $id, '</td>';
     echo '<td>';
     echo '<a href=detail.php?id=', $id, '">', $row['name'], '</a>';
-    echo '</td>',"<input type='button' onClick= 'document.location.href='favorite-delete.php''value=削除'/><br>";
+    echo '</td>',"<td><input type='button' onClick= 'document.location.href='favorite-delete.php' value='削除'/></td>";
     echo '</tr>';
     
 }
