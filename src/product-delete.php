@@ -13,5 +13,4 @@
         echo '<hr>';
     require 'procuct.php';
     ?>
-?>
 <?php require './footer.php'; ?>
