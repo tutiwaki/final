@@ -16,7 +16,7 @@ $pdo = new PDO('mysql:host=mysql218.phy.lolipop.lan;dbname=LAA1516969-aso2201217
     echo '<a href=detail.php?id=', $id, '">', $row['name'], '</a>';
     echo '</td>';
     echo '<td>';
-    echo '<a href=product-delete.php?id=', $id, '">削除</a>';
+    echo '<a href=product-delete.php?id=', $id, '>削除</a>';
     echo '</td>';
     echo '</tr>';
     

@@ -8,12 +8,9 @@
     'LAA1516969', 'Narimo1930');
     $sql=$pdo->prepare(
         'delete from Syoutyuu where id=?');
-        $sql->execute([,$_GET['id']]);
+        $sql->execute([$_GET['id']]);
         echo '商品を削除しました。';
         echo '<hr>';
-    }else{
-        echo 'お気に入りから商品を削除するには、ログインしてください。';
-    }
     require 'procuct.php';
     ?>
 ?>
