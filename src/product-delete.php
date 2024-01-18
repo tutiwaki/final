@@ -1,16 +1,23 @@
 <?php require './header.php'; ?>
 <?php require 'menu.php'; ?>
-<form action="procuct.php" method="post">
+<form action="update_product.php" method="post">
+    商品ID: <input type="text" name="product_id" required><br>
+    更新する情報: <input type="text" name="new_info" required><br>
+    <input type="submit" value="商品更新">
 </form>
-<hr>
 <?php
-    $pdo=new PDO('mysql:host=mysql218.phy.lolipop.lan;dbname=LAA1516969-aso2201217;charset=utf8',
-    'LAA1516969', 'Narimo1930');
-    $sql=$pdo->prepare(
-        'delete from Syoutyuu where id=?');
-        $sql->execute([$_GET['id']]);
-        echo '商品を削除しました。';
-        echo '<hr>';
-    require 'procuct.php';
-    ?>
-<?php require './footer.php'; ?>
+include 'db_connect.php'; 
+
+$product_id = $_POST['product_id'];
+$new_info = $_POST['new_info'];
+
+$sql = "UPDATE products SET column_name = '$new_info' WHERE id = $product_id";
+
+if ($conn->query($sql) === TRUE) {
+    echo "商品が更新されました";
+} else {
+    echo "エラー: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
